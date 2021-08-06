@@ -20,13 +20,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-         drawerLayout= findViewById(R.id.drawer_layout)
+        drawerLayout= findViewById(R.id.drawer_layout)
         val navController = this.findNavController(R.id.nav_host_fragment)
         val navView: NavigationView = findViewById(R.id.nav_view)
+
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(navView, navController)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
 
     }
 
