@@ -19,5 +19,30 @@
         android:id="@+id/quizFragment"
         android:name="com.veronica.idn.quezzz.fragment.QuizFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_wonFragment"
+            app:destination="@id/wonFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_overFragment"
+            app:destination="@id/overFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wonFragment"
+        android:name="com.veronica.idn.quezzz.fragment.WonFragment"
+        android:label="fragment_won"
+        tools:layout="@layout/fragment_won" >
+        <action
+            android:id="@+id/action_wonFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overFragment"
+        android:name="com.veronica.idn.quezzz.fragment.OverFragment"
+        android:label="fragment_over"
+        tools:layout="@layout/fragment_over" >
+        <action
+            android:id="@+id/action_overFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
 </navigation>

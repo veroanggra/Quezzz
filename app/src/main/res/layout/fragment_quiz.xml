@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable
+            name="quiz"
+            type="com.veronica.idn.quezzz.fragment.QuizFragment" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/cl_quiz"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,11 +19,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_quiz"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="150dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="150dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +42,7 @@
                 android:id="@+id/tv_question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/question"
+                android:text="@{quiz.currentQuestions.text}"
                 android:textSize="@dimen/_20sp" />
 
             <RadioGroup
@@ -49,27 +55,46 @@
                     android:id="@+id/rb_option_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/option_1" />
+                    android:text="@{quiz.answers[0]}" />
 
                 <RadioButton
                     android:id="@+id/rb_option_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/option_2" />
+                    android:text="@{quiz.answers[1]}" />
                 <RadioButton
                     android:id="@+id/rb_option_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/option_3" />
+                    android:text="@{quiz.answers[2]}" />
                 <RadioButton
                     android:id="@+id/rb_option_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/option_4" />
+                    android:text="@{quiz.answers[3]}" />
             </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shape_round"
+                android:text="@string/submit"
+                android:layout_marginTop="@dimen/_20dp"/>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="147dp"
+        android:layout_height="71dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
